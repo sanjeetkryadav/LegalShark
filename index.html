@@ -36,7 +36,7 @@
                     <li><a href="#about" class="nav-link">About Us</a></li>
                     <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
                     <li><a href="#resources" class="nav-link">Resources</a></li>
-                    <li><a href="#contact" class="btn btn-primary" style="margin-left: 1rem;">Free Consultation</a></li>
+                    <li><a href="#contact" class="btn btn-primary" style="margin-left: 1rem;">Consultation</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,7 +53,7 @@
                 <p>Expert legal solutions for loan settlement and debt restructuring. We protect you from harassment,
                     negotiate with creditors on your behalf, and secure the best possible outcome.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Start Free Consultation</a>
+                    <a href="#contact" class="btn btn-primary">Consultation</a>
                     <a href="#services" class="btn btn-outline">Our Services</a>
                 </div>
             </div>
@@ -320,7 +320,7 @@
                 </div>
 
                 <div class="contact-form">
-                    <h3 style="margin-bottom: 1.5rem;">Request a Free Case Evaluation</h3>
+                    <h3 style="margin-bottom: 1.5rem;">Request a Case Evaluation</h3>
                     <form id="leadForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -329,7 +329,12 @@
 
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" required placeholder="(555) 123-4567">
+                            <input type="tel" id="phone" class="form-control" required pattern="\d{10}" title="Please enter a valid 10-digit phone number." placeholder="1234567890">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required placeholder="john@example.com">
                         </div>
 
                         <div class="form-group">
@@ -355,11 +360,10 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Get Your Free Evaluation</button>
+                        <button type="submit" class="btn btn-primary">Consultation</button>
                         <div id="formSuccess"
                             style="display: none; margin-top: 1rem; color: #48bb78; font-weight: 500;">
-                            <i class="fa-solid fa-check-circle"></i> Request received. Our legal team will contact you
-                            shortly.
+                            <i class="fa-solid fa-check-circle"></i> Thank You! Request received. Our legal team will contact you shortly.
                         </div>
                     </form>
                 </div>
@@ -415,6 +419,33 @@
             </div>
         </div>
     </footer>
+
+    <!-- Timed Pop-up Modal -->
+    <div id="timedPopup" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalFormContainer">
+                <h3>Professional Legal Support</h3>
+                <p>Let our legal experts help you today.</p>
+                <form id="popupForm">
+                    <div class="form-group">
+                        <label for="popupName">Full Name</label>
+                        <input type="text" id="popupName" class="form-control" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="popupPhone">Phone Number</label>
+                        <input type="tel" id="popupPhone" class="form-control" required pattern="\d{10}" title="Please enter a valid 10-digit phone number." placeholder="1234567890">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+                </form>
+            </div>
+            <div id="modalSuccess" style="display: none; text-align: center; padding: 2rem 0;">
+                <i class="fa-solid fa-check-circle" style="font-size: 3rem; color: #48bb78; margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 0.5rem; color: #48bb78;">Thank You!</h3>
+                <p>Your request has been received. Our legal experts will contact you shortly.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
